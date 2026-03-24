@@ -12,6 +12,15 @@ struct Edge {
     int weight;  // 边的权重
 };
 
+// 邻接表的定义：graph[u] 存储了从 u 出发的所有边 {v, w}
+vector<vector<pair<int, int>>> graph(n + 1);
+for (const auto& edge : times) {
+    int u = edge[0];
+    int v = edge[1];
+    int w = edge[2];
+    graph[u].push_back({v, w});
+}
+// 邻接表也是经常使用存图的一种结构
 void dijkstra(int start, int n, const vector<vector<Edge>>& graph) {
     // 1. 初始化距离数组，全部赋为无穷大
     vector<int> dist(n, INF);
