@@ -18,7 +18,8 @@ for (const auto& edge : times) {
     int u = edge[0];
     int v = edge[1];
     int w = edge[2];
-    graph[u].push_back({v, w});
+    graph[u].push_back({v, w}); // 有向图
+    // graph[v].push_back({u, w});  无向图
 }
 // 邻接表也是经常使用存图的一种结构
 void dijkstra(int start, int n, const vector<vector<Edge>>& graph) {
